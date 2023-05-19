@@ -207,7 +207,7 @@ header{
     height: 6px;
     border-radius: 30px;
     transform: translateX(-50%);
-    background-color: #bd6262;
+    background-color: #954d4d;
 }
 .calendar .event:hover::after{
     background-color: white;
