@@ -208,7 +208,7 @@ window.addEventListener("scroll", function () {
     function delay(time) {
         return new Promise(resolve => setTimeout(resolve, time));
     }
-    delay(500).then(() => initCalendar());
+    delay(750).then(() => initCalendar());
 
     // prev. month
     function prevMonth(){
