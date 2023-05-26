@@ -447,6 +447,11 @@ header{
     display: grid;
     align-items: center;
 }
+.main-text-tre{
+    color: white; 
+    font-size: 100px; 
+    user-select: none;
+}
 .main-abt{
     height: 100%;
     width: 100%;
@@ -722,13 +727,253 @@ html {
     }
 }
 @media (max-width: 1340px){
-    .main-img img{
-        width: 100%;
-        height: auto;
+    .main-img{
+        display: none;
     }
     .main-text h1{
         font-size: 75px;
         margin: 0 0 30px;
+    }
+    .main-text p{
+        font-size: 12.5px;
+        margin: 0 0 30px;
+    }
+}
+@media (max-width: 1195px){
+    section{
+        padding: 0 0%;
+        transition: .2s;
+    }
+    .main{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+    .icons{
+        display: none;
+    }
+}
+@media (max-width: 990px){
+    /* main menu */
+    .main{
+        background: #121212;
+    }
+    .main-text h1{
+        font-size: 50px;
+        text-align: center;
+    }
+    .main-text p{
+        font-size: 10px;
+        margin: 0 0 90px;
+        text-align: center;
+    }
+    .main-text a{
+        display: none;
+    }
+    #menu-icon{
+        display: block;
+        margin-top: 0px;
+        margin-right: 11px;
+    }
+    .navlist{
+        position: absolute;
+        top: 0%;
+        right: -100%;
+        width: 200px;
+        height: 1000px;
+        background: #954d4d;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 80px 20px;
+        transition: all .55s ease;
+    }
+    .navlist a{
+        display: block;
+        margin: 40px 0;
+        margin-left: 0;
+    }
+    .navlist.open{
+        right: 0;
+    }
+    .logo{
+        margin-left: 15px;
+    }
+    .logo-icon{
+        top: 80%;
+        right: 28%;
+    }
+    /* calendar */
+    body{
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .main-cal{
+        background: linear-gradient(180deg, #121212 36.5%, #bd6262 36.5%, #bd6262 77%, #bd6262 77%);
+    }
+    .container{
+        height: 100%;
+        flex-direction: column;
+        border-radius: 0px;
+        margin-top: 430px;
+    }
+    .container .left,
+    .container .right{
+        width: 100%;
+        height: 100%;
+        padding: 0px 0px;
+    }
+    .container .right{
+        margin-top: 40px;
+    }
+    .container .right h3{
+        margin-top: 60px;
+    }
+    .calendar::before,
+    .calendar::after{
+        top: 100%;
+        left: 50%;
+        width: 97%;
+        height: 12px;
+        border-radius: 0px 0px 5px 5px;
+        transform: translateX(-50%);
+    }
+    .calendar::before{
+        width: 94%;
+        top: calc(100% + 12px);
+    }
+    .events{
+        padding-bottom: 340px;
+        padding: 0px;
+        margin-bottom: 0px;
+    }
+    .calendar .month{
+        height: 75px;
+    }
+    .calendar .weekdays{
+        height: 50px;
+    }
+    .calendar .days .day{
+        height: 45px;
+        font-size: 0.8rem;
+    }
+    .calendar .days .day.active,
+    .calendar .days .day.today{
+        font-size: 1rem;
+    }
+    .right .today-date{
+        padding: 20px;
+        margin-top: 0px;
+    }
+    .events .event{
+        background: #793e3e;
+        width: 100%;
+        border: 1px solid #121212;
+    }
+    .events .event:nth-child(even){
+        background: #954d4d;
+    }
+    .events .event:hover{
+        background: #121212;
+    }
+    .navlist button{
+        display: none;
+    }
+    /* trending */
+    .main-tre{
+        background: #121212;
+    }
+    .main-text-tre {
+        color: white; 
+        font-size: 40px;
+        text-align: center;
+        user-select: none;
+        margin-bottom: 40px;
+    }
+    .logo-icon-tre {
+        display: none;
+    }
+    /* about */
+    .main-abt{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+        background: #121212;
+    }
+    .main-illu{
+        position: absolute;
+        width: 320px;
+        height: 220px;
+        margin-left: 35px;
+        border: 5px solid #954d4d;
+        border-radius: 0%;
+    }
+    .main-text-abt h1{
+        font-size: 50px;
+        margin-left: 35px;
+        margin-bottom: 280px;
+        text-align: left;
+    }
+    .main-text-abt p{
+        font-size: 10px;
+        margin-left: 35px;
+        text-align: left;
+    }
+    .scroll-down i{
+        color: white;
+        background: #bd6262;
+    }
+    .main-abt-2{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+        background: linear-gradient(125deg, #121212 70%, #bd6262 70%, #bd6262 77%, #954d4d 77%);
+    }
+    .main-illu-2{
+        position: absolute;
+        width: 320px;
+        height: 220px;
+        margin-left: 35px;
+        margin-bottom: 55px;
+        border: none;
+        border-radius: 0%;
+    }
+    .main-text-abt-2 h1{
+        font-size: 50px;
+        margin-left: 35px;
+        margin-bottom: 280px;
+        text-align: left;
+    }
+    .main-text-abt-2 p{
+        font-size: 10px;
+        margin-left: 35px;
+        text-align: left;
+    }
+    .main-abt-3{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+        background: linear-gradient(125deg, #121212 9.7%, #bd6262 9.7%, #bd6262 16.7%, #954d4d 16.7%);
+    }
+    .main-illu-3{
+        position: absolute;
+        width: 320px;
+        height: 220px;
+        margin-left: 35px;
+        margin-bottom: 90px;
+        border: 5px solid #121212;
+        border-radius: 0%;
+    }
+    .main-text-abt-3 h1{
+        font-size: 50px;
+        margin-left: 35px;
+        margin-bottom: 280px;
+        text-align: left;
+    }
+    .main-text-abt-3 p{
+        font-size: 10px;
+        margin-left: 35px;
+        text-align: left;
     }
 }
 @keyframes slide{
