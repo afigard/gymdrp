@@ -4,96 +4,196 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
-    <title>GYMDRP - home</title>
-    <link rel="icon" href="img/bsquare.png" type="image/x-icon">
+    <title>GYMDRP</title>
+    <link rel="icon" href="img/logo-sb.png" type="image/x-icon">
 
     <!-- scrollreveal link -->
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <!-- custom CSS links -->
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="transitions.css">
 
     <!-- boxicons link -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
     <!-- remixicon link -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.3.0/fonts/remixicon.css" rel="stylesheet">
 
     <!-- google fonts link -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 
 </head>
 <body>
 
-    <div class="transition transition-1 is-active"></div>
-
     <header id="h">
-        <div class="logo">GYMDRP</div>
+        <div class="logo">
+            <li>GYMDRP</li>
+        </div>
 
         <ul class="navlist">
-            <li><a href="index.html">home</a></li>
-            <li><a href="calendar.html">the calendar</a></li>
-            <li><a href="trending.html">what's trending</a></li>
-            <li><a href="about.html">about</a></li>
+            <li><a href="./">Home</a></li>
+            <li><a href="./calendar">Calendar</a></li>
+            <li><a href="./statistics">Statistics</a></li>
+            <li><a href="./explorer">Explorer</a></li>
         </ul>
+
+        <div class="sign-up">
+            <button onclick="popupToggleOn()">Sign up</button>
+        </div>
 
         <div class="bx bx-menu" id="menu-icon"></div>
     </header>
 
+    <div id="popup">
+        <div class="content">
+            <h2>Become an exclusive Member</h2>
+            <p>Get privileged access, preview of upcoming updates, and much more.</p>
+            <p>(Purposely limited to 1000 spots for now.)</p>
+            <form name="submit-to-google-sheet">
+                <div class="inputBox1">
+                    <input type="email" name="Email" placeholder="your email" required>
+                </div>
+                <div class="inputBox2">
+                    <input type="submit" value="Sign up">
+                </div>
+            </form>
+            <span id="msg"></span>
+        </div>
+        <i class="ri-close-circle-line" onclick="popupToggleOff()"></i>
+    </div>
+
     <section class="main">
         <div class="main-text">
-            <h1>ONE WEBSITE, <br> EVERY BRAND.</h1>
-            <p>Get access to the latest drops of the hypest brands of the moment.
-            <br>Extensive catalog &nbsp;-&nbsp; Easy usage &nbsp;-&nbsp; Direct access
-            </p>
-            <a href="about.html">learn more</a>
-        </div>
-
-        <div class="main-img">
-            <div class="slideshow">
-                <div class="slider">
-                    <img  class="pic" src="img/main1.png" width="400px" height="400px">
-                </div>
-                <div class="slider">
-                    <img  class="pic" src="img/main2.jpg" width="400px" height="400px">
-                </div>
-                <div class="slider">
-                    <img  class="pic" src="img/main3.jpg" width="400px" height="400px">
-                </div>
-                <div class="slider">
-                    <img  class="pic" src="img/main4.png" width="400px" height="400px">
-                </div>
-                <div class="slider">
-                    <img  class="pic" src="img/main5.png" width="400px" height="400px">
-                </div>
-                <div class="slider">
-                    <img  class="pic" src="img/main6.jpg" width="400px" height="400px">
-                </div>
-                <div class="slider">
-                    <img  class="pic" src="img/main7.jpg" width="400px" height="400px">
-                </div>
-                <div class="slider">
-                    <img  class="pic" src="img/main8.jpg" width="400px" height="400px">
-                </div>
-                <div class="slider">
-                    <img  class="pic" src="img/main9.jpg" width="400px" height="400px">
-                </div>
-            </div>
+            <h1>The<span style="background:linear-gradient(122.25deg, #ffb963 12.16%, #ff4c4c 90.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent"> high-tech </span>website about<span style="background:linear-gradient(122.25deg, #ffb963 12.16%, #ff4c4c 90.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent"> gym </span>brands.</h1>
+            <p>Get access to the latest releases of popular brands, related statistics, and much more.</p>
+            <a href="./calendar">Check out Calendar&#8482;</a>
+            <li><img  src="img/logo.png" width="110px" height="110px"></li>
         </div>
     </section>
 
-    <div class="icons">
-        <a href="https://www.instagram.com/gymdrp/" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line"></i></a>
-        <a href="https://www.paypal.com/donate/?business=VVAPGTVXSAW8J&no_recurring=0&item_name=I+would+really+like+to+improve+this+website+and+add+many+features.+If+you+want+and+if+you+can%2C+a+small+tip+could+help%21+Thanks%21&currency_code=USD" target="_blank" rel="noopener noreferrer"><i class="ri-paypal-line"></i></a>
+    <div class="main2">
+        <div class="main-text">
+            <h1>Where<span style="background:linear-gradient(122.25deg, #63d5ff 12.16%, #4c64ff 90.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent"> athletes </span>and<span style="background:linear-gradient(122.25deg, #63d5ff 12.16%, #4c64ff 90.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent"> engineers </span>meet.</h1>
+            <p class="firstp"><span style="color: rgba(255, 255, 255, 0.4);">></span> Real-time analytics.</p>
+            <p class="secondp"><span style="color: rgba(255, 255, 255, 0.4);">></span> Precise comparisons of similar products.</p>
+            <p class="lastp"><span style="color: rgba(255, 255, 255, 0.4);">></span> Popularity forecast.</p>
+            <a href="./statistics" class="dbtn">Discover Statistics&#8482;</a>
+            <a><i class="ri-group-line"></i></a>
+        </div>
+        <canvas id="c" width="1150" height="600"></canvas>
     </div>
 
-    <div class="logo-icon">
-        <img  src="img/logo.png" width="150px" height="150px">
+    <div class="main3">
+        <div class="main-text">
+            <h1>An<span style="background:linear-gradient(122.25deg, #d0ff63 12.16%, #5bff4c 90.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent"> extensive </span>range of brands.</h1>
+            <p>From apparel to supplements, from vintage to ultramodern,<br>There's something for everyone.</p>
+            <a href="./explorer">Browse Explorer&#8482;</a>
+        </div>
+        <div class="gallery-container">
+            <div class="img-container sq1">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq2">
+                <img src="img/main1.png" style="opacity: 0.1;">
+            </div>
+            <div class="img-container sq3">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq4">
+                <img src="img/main2.jpg" style="opacity: 0.1;">
+            </div>
+            <div class="img-container sq5">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq6">
+                <img src="img/main3.jpg" style="opacity: 0.1;">
+            </div>
+            <div class="img-container sq7">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq8">
+                <img src="img/main12.png" style="opacity: 0.1;">
+            </div>
+            <div class="img-container sq9">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq10">
+                <img src="img/main4.png" style="opacity: 0.1;">
+            </div>
+            <div class="img-container sq11">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq12">
+                <img src="img/main5.png" style="background: white; opacity: 0.1;">
+            </div>
+            <div class="img-container sq13">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq14">
+                <img src="img/main13.png" style="opacity: 0.1;">
+            </div>
+            <div class="img-container sq15">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq16">
+                <img src="img/main6.jpg" style="opacity: 0.1;">
+            </div>
+            <div class="img-container sq17">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq18">
+                <img src="img/main7.jpg" style="opacity: 0.1;">
+            </div>
+            <div class="img-container sq19">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq20">
+                <img src="img/main8.jpg" style="opacity: 0.1;">
+            </div>
+            <div class="img-container sq21">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq22">
+                <img src="img/main14.jpg" style="opacity: 0.1;">
+            </div>
+            <div class="img-container sq23">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq24">
+                <img src="img/main9.jpg" style="opacity: 0.1;">
+            </div>
+            <div class="img-container sq25">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq26">
+                <img src="img/main10.jpg" style="opacity: 0.1;">
+            </div>
+            <div class="img-container sq27">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq28">
+                <img src="img/main11.jpeg" style="opacity: 0.1;">
+            </div>
+        </div>
     </div>
+
+    <div class="main4">
+        <div class="main-text">
+            <h1>Built on<span style="background:linear-gradient(122.25deg, #ff63b4 12.16%, #e14cff 90.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent"> community</span>.</h1>
+            <p>Thriving from feedbacks, this website aims to be the best for its users.</p>
+            <p>Feel free to send any idea or remark, report any issue, or give support if you can.</p>
+            <div class="buttons4">
+                <a href="mailto:gymdrp@gmail.com"><i class="ri-mail-send-line"></i></a>
+                <a href="https://www.instagram.com/gymdrp/" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line"></i></a>
+                <a href="https://www.paypal.com/donate/?business=VVAPGTVXSAW8J&no_recurring=0&item_name=Support+the+website+if+you+like+it.+Thank+you%21&currency_code=USD" target="_blank" rel="noopener noreferrer"><i class="ri-paypal-line"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-mask"></div>
 
     <!-- custom JS link -->
     <script src="script.js"></script>

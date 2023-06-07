@@ -1,6 +1,7 @@
-// LIST OF REGISTERED WEBSITES
-/*
+/* LIST OF REGISTERED WEBSITES:
+
 Alphalete
+ASRV
 Breathedivinity
 Cbum Fitness
 CIVIL REGIME
@@ -25,58 +26,56 @@ YoungLA
 
 
 
-
-
-
 const sr = ScrollReveal ({
-    delay: 110,
-    duration: 3500,
-    opacity: 1,
-    origin: "left",
-    distance: "55px",
+    delay: 400,
+    duration: 1000,
+    origin: "bottom",
+    distance: "30px",
     reset: false
 });
+sr.reveal('.firstp', {delay: 500, origin: "left"});
+sr.reveal('.secondp', {delay: 1600, origin: "left"});
+sr.reveal('.lastp', {delay: 2700, origin: "left"});
 
-sr.reveal('.main-text');
-sr.reveal('.main-img');
+sr.reveal('.sq1', {delay: 450});
+sr.reveal('.sq2', {delay: 500});
+sr.reveal('.sq3', {delay: 550});
+sr.reveal('.sq4', {delay: 600});
+sr.reveal('.sq5', {delay: 650});
+sr.reveal('.sq6', {delay: 700});
+sr.reveal('.sq7', {delay: 750});
 
-sr.reveal('.container');
+sr.reveal('.sq8', {delay: 1000});
+sr.reveal('.sq9', {delay: 1050});
+sr.reveal('.sq10', {delay: 1100});
+sr.reveal('.sq11', {delay: 1150});
+sr.reveal('.sq12', {delay: 1200});
+sr.reveal('.sq13', {delay: 1250});
+sr.reveal('.sq14', {delay: 1300});
 
-sr.reveal('.main-text-abt');
-sr.reveal('.main-illu');
+sr.reveal('.sq15', {delay: 1550});
+sr.reveal('.sq16', {delay: 1600});
+sr.reveal('.sq17', {delay: 1650});
+sr.reveal('.sq18', {delay: 1700});
+sr.reveal('.sq19', {delay: 1750});
+sr.reveal('.sq20', {delay: 1800});
+sr.reveal('.sq21', {delay: 1850});
+
+sr.reveal('.sq22', {delay: 2100});
+sr.reveal('.sq23', {delay: 2150});
+sr.reveal('.sq24', {delay: 2200});
+sr.reveal('.sq25', {delay: 2250});
+sr.reveal('.sq26', {delay: 2300});
+sr.reveal('.sq27', {delay: 2350});
+sr.reveal('.sq28', {delay: 2400});
+
+sr.reveal('.container', {delay: 1500, origin: "top", duration: 2000, distance: "0px"});
+sr.reveal('.ri-arrow-left-s-line', {delay: 0, origin: "right", duration: 4000, distance: "500px", opacity: 1});
+sr.reveal('.ri-arrow-right-s-line', {delay: 0, origin: "left", duration: 4000, distance: "500px", opacity: 1});
 
 
 
-window.onload = () => {
-    const transition_el = document.querySelector('.transition');
-    const anchors = document.querySelectorAll('a');
-
-    setTimeout(() => {
-        transition_el.classList.remove('is-active');
-    }, 750);
-
-    // Warning! if 'a' elements are added, 'i < x' needs to be incremented.
-    x = 4;
-    if(document.querySelector('title').text == "GYMDRP - home"){
-        x = 5;
-    }
-
-    for (let i = 0; i < x; i++) {
-        const anchor = anchors[i];
-
-        anchor.addEventListener('click', e => {
-            e.preventDefault();
-            let target = e.target.href;
-
-            transition_el.classList.add('is-active');
-
-            setTimeout(() => {
-                window.location.href = target;
-            }, 750);
-        });
-    }
-}
-
+// MAKE HEADER DISAPPEAR ON SCROLL
 window.addEventListener("scroll", function () {
     let header = document.getElementById("h");
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -91,6 +90,7 @@ window.addEventListener("scroll", function () {
 
 
 
+// MOBILE MENU
  let menu = document.querySelector('#menu-icon');
  let navlist = document.querySelector('.navlist');
  menu.onclick = () => {
@@ -100,8 +100,50 @@ window.addEventListener("scroll", function () {
 
 
 
- // ------------- calendar begining -------------
- if(document.querySelector('title').text == "GYMDRP - the calendar"){
+// MAIN PAGE CANVAS
+ if(document.querySelector('title').text == "GYMDRP"){
+    var c = document.getElementById('c');
+    var cxt = c.getContext("2d");
+    
+    var chinese = "田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑";
+    chinese = chinese.split("");
+    
+    var font_size =10;
+    var columns = c.width/font_size; 
+    
+    var drops = [];
+    
+    for(var x=0;x<columns;x++){
+    drops[x]=1;
+    }
+    
+    function draw(){
+    cxt.fillStyle="rgba(0,0,0,0.05)";
+    cxt.fillRect(0,0,c.width,c.height);
+    
+    cxt.fillStyle = "#4c64ff8a";
+    cxt.font = font_size+'px arial';
+    
+    
+    for(var i=0;i<drops.length;i++){
+        var text = chinese[Math.floor(Math.random()*chinese.length)];
+        cxt.fillText(text,i*font_size,drops[i]*font_size);
+        
+        if(drops[i]*font_size>c.height && Math.random() >0.975)
+        drops[i]=0;
+        
+        drops[i]++;
+    }
+    
+    }
+    setInterval(draw,50);
+ }
+
+
+
+ // CALENDAR PAGE
+ if(document.querySelector('title').text == "Calendar | GYMDRP"){
+    window.onload = () => {setTimeout(() => {}, 1500);};
     const calendar = document.querySelector(".calendar");
     const date = document.querySelector(".date");
     const daysContainer = document.querySelector(".days");
@@ -111,12 +153,11 @@ window.addEventListener("scroll", function () {
     const eventDate = document.querySelector(".event-date");
     const eventsContainer = document.querySelector(".events");
     var eventsArr = [];
-
-    // read sheet beginning
     const sheetID = '1jspIx1WHPlrgfWq40yWH1_LHjxz2BOAXy7BBVV9baKM';
     const baseUrl = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?`;
     const sheetName = 'Sheet1';
     const FinalUrl = `${baseUrl}&sheet=${sheetName}`;
+
     async function readSheet(){
         fetch(FinalUrl)
             .then(response => response.text()) 
@@ -131,7 +172,6 @@ window.addEventListener("scroll", function () {
             })
     }
     readSheet();
-    // read sheet end
 
     let today = new Date();
     let activeDay;
@@ -153,7 +193,6 @@ window.addEventListener("scroll", function () {
         "December"
     ];
 
-    // fun. to add days
     function initCalendar() {
         const firstDay = new Date(year, month, 1);
         const lastDay = new Date(year, month + 1, 0);
@@ -219,7 +258,7 @@ window.addEventListener("scroll", function () {
     }
     delay(750).then(() => initCalendar());
 
-    // prev. month
+    // previous month
     function prevMonth(){
         month--;
         if(month < 0){
@@ -239,7 +278,7 @@ window.addEventListener("scroll", function () {
         initCalendar();
     }
 
-    // add actions on prev. and next
+    // add actions on previous and next months
     prev.addEventListener("click", prevMonth);
     next.addEventListener("click", nextMonth);
 
@@ -331,32 +370,17 @@ window.addEventListener("scroll", function () {
         if(events == ""){
             events = `
             <div class="no-event">
-                <h3>No releases for today.</h3>
+                <h3>No drops or restocks.</h3>
             </div>
             `;
         }
         eventsContainer.innerHTML = events;
     }
-
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyLvZzBurCObS9M0L6OV150-_iV1rloMznwlU8Jg3EtTevu_cIb_VTYQv8n5wgnyzvz/exec';
-    const form = document.forms['submit-to-google-sheet'];
-    const msg = document.getElementById('msg');
-
-    form.addEventListener('submit', e => {
-        e.preventDefault();
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                msg.innerHTML = "thanks, you're in";
-                console.log('Email successfully sent.');
-                setTimeout(function(){
-                    msg.innerHTML = "";
-                },4500);
-                form.reset();
-            })
-            .catch(error => console.error('Error sending the email.'))
-    });
  }
- // --------------- calendar end ----------------
+
+
+
+// BACKGROUND FADE IN / FADE OUT
 function fadeIn(el, time) {
     el.style.opacity = 0;
     var last = +new Date();
@@ -382,6 +406,9 @@ function fadeOut(el, time) {
     tick();
 }
 
+
+
+// POPUP
 function popupToggleOn(){
     const popup = document.getElementById("popup");
     const mask = document.getElementById("page-mask");
@@ -396,3 +423,19 @@ function popupToggleOff(){
     mask.style.visibility = "hidden";
     fadeOut(mask,100)
 }
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyLvZzBurCObS9M0L6OV150-_iV1rloMznwlU8Jg3EtTevu_cIb_VTYQv8n5wgnyzvz/exec';
+const form = document.forms['submit-to-google-sheet'];
+const msg = document.getElementById('msg');
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "You're in";
+            console.log('Email successfully sent.');
+            setTimeout(function(){
+                msg.innerHTML = "";
+            },4500);
+            form.reset();
+        })
+        .catch(error => console.error('Error sending the email.'))
+});
