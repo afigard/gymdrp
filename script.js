@@ -18,6 +18,7 @@ LET THE DOG EAT
 Mentality
 Raw Nutrition
 RawGear
+SBDapparel
 TRENTECH
 Under Armour
 Vanquish Fitness
@@ -426,15 +427,18 @@ function popupToggleOff(){
 const scriptURL = 'https://script.google.com/macros/s/AKfycbyLvZzBurCObS9M0L6OV150-_iV1rloMznwlU8Jg3EtTevu_cIb_VTYQv8n5wgnyzvz/exec';
 const form = document.forms['submit-to-google-sheet'];
 const msg = document.getElementById('msg');
+const submitbx = document.getElementById('submitbox');
 form.addEventListener('submit', e => {
+    submitbx.innerHTML = "";
+    msg.innerHTML = "&#9203;";
     e.preventDefault();
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
         .then(response => {
             msg.innerHTML = "You're in";
             console.log('Email successfully sent.');
-            setTimeout(function(){
-                msg.innerHTML = "";
-            },4500);
+            //setTimeout(function(){
+            //    msg.innerHTML = "";
+            //},4500);
             form.reset();
         })
         .catch(error => console.error('Error sending the email.'))
