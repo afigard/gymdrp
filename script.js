@@ -18,7 +18,7 @@ LET THE DOG EAT
 Mentality
 Raw Nutrition
 RawGear
-SBDapparel
+SBD Apparel
 TRENTECH
 Under Armour
 Vanquish Fitness
