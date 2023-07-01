@@ -1032,15 +1032,14 @@ html {
     }
     .main-exp2 .main-img-exp{
         position: absolute;
-        width: 100%;
-        height: 100%;
+        width: 15%;
+        height: 15%;
+        top: 50%;
     }
     .main-exp2 .main-img-exp img{
         position: absolute;
-        width: 15%;
-        height: 15%;
-        top: 52%;
-        right: 43%;
+        width: 100%;
+        height: 100%;
     }
     .main-exp2 .main-text-exp{
         width: 70%;
