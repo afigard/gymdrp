@@ -149,7 +149,7 @@ header .logo{
     font-size: 14px;
     float: left;
 }
-.main2 .main-text .ri-group-line{
+.main2 .main-text .bxs-discount{
     font-size: 200px;
     position: absolute;
     color: #4c64ff;
@@ -163,6 +163,7 @@ header .logo{
     border:1px solid #252525;
     border-radius: 10px;
     box-shadow: 0 0 100px #4c64ff3c;
+    background: #121212;
 }
 .main3{
     height: 100%;
@@ -874,7 +875,7 @@ html {
         float: none;
         margin-bottom: 0px;
     }
-    .main2 .main-text .ri-group-line{
+    .main2 .main-text .bxs-discount{
         font-size: 60px;
         position: absolute;
         color: #4c64ff;
