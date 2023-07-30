@@ -24,7 +24,7 @@ header{
 header .sign-up button{
     background: transparent;
     color: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.7);
     padding: 8px 12px;
     border-radius: 5px;
     font-size: 15px;
@@ -33,7 +33,7 @@ header .sign-up button{
 }
 header .sign-up button:hover{
     color: white;
-    border: 1px solid white;
+    border: 2px solid white;
 }
 header .logo{
     display: flex;
@@ -91,7 +91,7 @@ header .logo{
 }
 .main-text a{
     color: #ff4c4c;
-    border: 1px solid #ff4c4c;
+    border: 2px solid #ff4c4c;
     background: #121212;
     box-shadow: 0 0 0px white;
     padding: 18px 27px;
@@ -100,8 +100,20 @@ header .logo{
     text-align: center;
     margin: auto;
 }
-.main-text li{
+.main-text .lower1{
     margin-top: 50px;
+}
+.main-text .lower1 a{
+    padding: 0px 0px;
+    margin-right: 300px;
+    margin-left: 300px;
+    font-size: 60px;
+    opacity: 0.75;
+    border: none;
+}
+.main-text .lower1 img{
+    position: absolute;
+    right: 46%;
 }
 .main2{
     height: 100%;
@@ -141,7 +153,7 @@ header .logo{
 }
 .main2 .main-text .dbtn{
     color: #4c64ff;
-    border: 1px solid #4c64ff;
+    border: 2px solid #4c64ff;
     background: #121212;
     box-shadow: 0 0 0px white;
     padding: 18px 27px;
@@ -183,7 +195,7 @@ header .logo{
 }
 .main3 .main-text a{
     color: #5bff4c;
-    border: 1px solid #5bff4c;
+    border: 2px solid #5bff4c;
     background: #121212;
     box-shadow: 0 0 0px white;
     padding: 18px 27px;

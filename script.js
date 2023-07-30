@@ -34,9 +34,11 @@ const sr = ScrollReveal ({
     distance: "30px",
     reset: false
 });
-sr.reveal('.firstp', {delay: 500, origin: "left"});
-sr.reveal('.secondp', {delay: 1600, origin: "left"});
-sr.reveal('.lastp', {delay: 2700, origin: "left"});
+sr.reveal('.ri-arrow-down-double-line', {delay: 1000, duration: 7000});
+
+sr.reveal('.firstp', {delay: 300, origin: "left"});
+sr.reveal('.secondp', {delay: 1400, origin: "left"});
+sr.reveal('.lastp', {delay: 2500, origin: "left"});
 
 sr.reveal('.sq1', {delay: 350});
 sr.reveal('.sq2', {delay: 400});
@@ -153,7 +155,7 @@ window.addEventListener("scroll", function () {
         Confetti = (function() {
           function Confetti() {
             this.style = COLORS[~~range(0, 5)];
-            this.rgb = "rgba(" + this.style[0] + "," + this.style[1] + "," + this.style[2];
+            this.rgb = "rgba(" + this.style[0] + "," + this.style[1] + "," + this.style[2] + ",0.25)";
             this.r = ~~range(2, 6);
             this.r2 = 2 * this.r;
             this.replace();
