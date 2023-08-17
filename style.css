@@ -66,7 +66,7 @@ header .logo{
 .main{
     height: 100%;
     width: 100%;
-    min-height: 80vh;
+    min-height: 185vh;
     background: #121212;
     position: relative;
     display: flex;
@@ -85,11 +85,17 @@ header .logo{
 .main-text p{
     font-weight: 200;
     font-size: 18px;
-    margin-bottom: 60px;
+    margin-bottom: 230px;
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
 }
+.main-text .top1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .main-text a{
+    position: absolute;
     color: #ff4c4c;
     border: 2px solid #ff4c4c;
     background: #121212;
@@ -98,27 +104,63 @@ header .logo{
     border-radius: 15px;
     font-size: 14px;
     text-align: center;
-    margin: auto;
+    margin-bottom: 850px;
 }
-.main-text .lower1{
-    margin-top: 50px;
+.main-text a:hover{
+    color: #121212;
+    background: #ff4c4c;
 }
-.main-text .lower1 a{
-    padding: 0px 0px;
-    margin-right: 300px;
-    margin-left: 300px;
-    font-size: 60px;
-    opacity: 0.75;
-    border: none;
+.main-text #canva1{
+    display: flex;
+    border:1px solid #252525;
+    border-radius: 10px;
+    box-shadow: 0 0 100px rgba(255, 255, 255, 0.2);
+    background: #121212;
+    margin-bottom: 15px;
 }
-.main-text .lower1 img{
+.main-text .canvatext{
     position: absolute;
-    right: 46%;
+    z-index: 1;
+}
+.main-text .canvatext h1{
+    position: absolute;
+    top: 50%; 
+    right: 50%;
+    transform: translate(50%,-50%);
+    font-size: 8em;
+    font-weight: 700;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    -webkit-text-stroke: 3px #ff4c4c;
+}
+@keyframes ct1anim {
+    0% {transform: translate(50%,-50%);opacity: 0;}
+    15% {transform: translate(49%,-50%);opacity: 0;}
+    30% {transform: translate(15%,-50%);opacity: 0.75;}
+    100% {transform: translate(50%,-50%);opacity: 1;}
+}
+@keyframes ct2anim {
+    0% {transform: translate(50%,-50%);opacity: 0;}
+    15% {transform: translate(51%,-50%);opacity: 0;}
+    30% {transform: translate(85%,-50%);opacity: 0.75;}
+    100% {transform: translate(50%,-50%);opacity: 1;}
+}
+@keyframes slashanim {
+    0% {opacity: 1; font-size: 0em; transform: translate(50%,-50%);}
+    15% {opacity: 1; font-size: 12em; transform: translate(50%,-50%);}
+    35% {opacity: 1; font-size: 10em; transform: translate(50%,-50%) rotate(78deg);}
+    60% {font-size: 0em; transform: translate(50%,-50%) rotate(180deg);}
+    100% {opacity: 0; font-size: 0em; transform: translate(50%,-50%) rotate(180deg);}
+}
+.main-text img{
+    margin-top: 40px;
 }
 .main2{
     height: 100%;
     width: 100%;
-    min-height: 100vh;
+    min-height: 102vh;
     background: repeating-linear-gradient(-45deg, #171717, #171717 1px, transparent 1px, transparent 60px), repeating-linear-gradient(45deg, #171717, #171717 1px, #121212 1px, #121212 60px);
     position: relative;
     display: flex;
@@ -142,40 +184,134 @@ header .logo{
 .main2 .main-text .lastp{
     margin-bottom: 80px;
 }
-.main2 .main-text a{
-    color: transparent;
-    border: none;
+.main2 .grid-deals{
+    display: flex;
+}
+.main2 .main-text .b1{
+    border: 1px solid #373737;
+    height: 200px;
+    width: 400px;
+    margin: 5px;
+    border-radius: 10px;
+    transition: all .2s ease;
+    display: inline-block;
+}
+.main2 .main-text .b1a{
+    background: radial-gradient(150px circle at 400px 200px, #4c64ff80 50%, transparent 51%);
+    background-color: #181818;
+}
+.main2 .main-text .b1b{
+    background: radial-gradient(150px circle at 0px 200px, #4c64ff80 50%, transparent 51%);
+    background-color: #181818;
+}
+.main2 .main-text .b1c{
+    background: radial-gradient(150px circle at 400px 0px, #4c64ff80 50%, transparent 51%);
+    background-color: #181818;
+}
+.main2 .main-text .b1 h1{
+    font-size: 20px;
+    font-weight: 500;
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.4);
+    filter: blur(.5px);
+}
+.main2 .main-text .b1 p{
+    font-size: 15px;
+    font-weight: 200;
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.2);
+    filter: blur(1.5px);
+}
+.main2 .main-text .b1:hover{
+    box-shadow: 0 0 15px #4c64ff3c;
+}
+.main2 .main-text .b1a:hover{
+    background: radial-gradient(150px circle at 400px 200px, #4c64ff 50%, transparent 51%);
+    background-color: #181818;
+    transform: translate(-5px, -5px);
+}
+.main2 .main-text .b1a:hover h1{
+    color: rgba(255, 255, 255, 0.9);
+    filter: none;
+}
+.main2 .main-text .b1a:hover p{
+    color: rgba(255, 255, 255, 0.5);
+    filter: none;
+}
+.main2 .main-text .b1b:hover{
+    background: radial-gradient(150px circle at 0px 200px, #4c64ff 50%, transparent 51%);
+    background-color: #181818;
+    transform: translate(5px, -5px);
+}
+.main2 .main-text .b1b:hover h1{
+    color: rgba(255, 255, 255, 0.9);
+    filter: none;
+}
+.main2 .main-text .b1b:hover p{
+    color: rgba(255, 255, 255, 0.5);
+    filter: none;
+}
+.main2 .main-text .b1c:hover{
+    background: radial-gradient(150px circle at 400px 0px, #4c64ff 50%, transparent 51%);
+    background-color: #181818;
+    transform: translate(-5px, 5px);
+}
+.main2 .main-text .b1c:hover h1{
+    color: rgba(255, 255, 255, 0.9);
+    filter: none;
+}
+.main2 .main-text .b1c:hover p{
+    color: rgba(255, 255, 255, 0.5);
+    filter: none;
+}
+.main2 .main-text .shadow{
+    border: 2px solid transparent;
     background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main2 .main-text .shadow:hover{
     box-shadow: none;
-    padding: 0 0;
-    border-radius: 0px;
-    font-size: 0px;
 }
 .main2 .main-text .dbtn{
+    height: 60px;
+    position: relative;
+    margin-top: 850px;
     color: #4c64ff;
     border: 2px solid #4c64ff;
     background: #121212;
-    box-shadow: 0 0 0px white;
     padding: 18px 27px;
     border-radius: 15px;
     font-size: 14px;
     float: left;
 }
-.main2 .main-text .bxs-discount{
-    font-size: 200px;
-    position: absolute;
-    color: #4c64ff;
-    border: none;
-    background: transparent;
-    right: 0%;
-    bottom: -9%;
+.main2 .main-text .dbtn:hover{
+    color: #121212;
+    background: #4c64ff;
 }
-.main2 #c{
+.main2 .main-text .bxs-discount{
+    font-size: 400px;
     position: absolute;
-    border:1px solid #252525;
-    border-radius: 10px;
-    box-shadow: 0 0 100px #4c64ff3c;
-    background: #121212;
+    color: #222850;
+    right: 80%;
+    bottom: 30%;
+    z-index: -1;
+    transform: rotate(30deg);
+}
+.main2 .main-text .bx-cart-add{
+    font-size: 400px;
+    position: absolute;
+    color: #222850;
+    right: -20%;
+    bottom: -20%;
+    z-index: -1;
+    transform: rotate(-30deg);
 }
 .main3{
     height: 100%;
@@ -193,7 +329,12 @@ header .logo{
     position: absolute;
     margin-top: 0px;
 }
+.main3 .main-text p{
+    margin-bottom: 60px;
+}
 .main3 .main-text a{
+    position: relative;
+    top: 0%;
     color: #5bff4c;
     border: 2px solid #5bff4c;
     background: #121212;
@@ -203,6 +344,10 @@ header .logo{
     font-size: 14px;
     text-align: center;
     margin: auto;
+}
+.main3 .main-text a:hover{
+    color: #121212;
+    background: #5bff4c;
 }
 .main3 .gallery-container{
     display: grid;
@@ -219,7 +364,7 @@ header .logo{
 .main4{
     height: 100%;
     width: 100%;
-    min-height: 50vh;
+    min-height: 63vh;
     background: repeating-linear-gradient(-45deg, #171717, #171717 1px, transparent 1px, transparent 60px), repeating-linear-gradient(45deg, #171717, #171717 1px, #121212 1px, #121212 60px);
     position: relative;
     display: flex;
@@ -232,11 +377,17 @@ header .logo{
 .main4 h1{
     font-size: 40px;
     color: white;
+    position: relative;
+    z-index: 2;
 }
 .main4 p{
     margin-bottom: 0px;
+    position: relative;
+    z-index: 2;
 }
 .main4 a{
+    position: relative;
+    top: 0%;
     color: #121212;
     border: 1px solid white;
     background: white;
@@ -261,6 +412,24 @@ header .logo{
     font-size: 25px;
     padding-top: 8px;
     padding-bottom: 8px;
+}
+.main4 .main-text .bxs-group{
+    font-size: 300px;
+    position: absolute;
+    color: #3f2346;
+    right: 65%;
+    bottom: 20%;
+    z-index: 1;
+    transform: rotate(-30deg);
+}
+.main4 .main-text .bxs-message-rounded{
+    font-size: 200px;
+    position: absolute;
+    color: #3f2346;
+    right: 20%;
+    bottom: 20%;
+    z-index: 1;
+    transform: rotate(30deg);
 }
 /* CALENDAR PAGE */
 .main-cal{

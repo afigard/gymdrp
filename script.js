@@ -34,11 +34,13 @@ const sr = ScrollReveal ({
     distance: "30px",
     reset: false
 });
-sr.reveal('.ri-arrow-down-double-line', {delay: 1000, duration: 7000});
 
-sr.reveal('.firstp', {delay: 300, origin: "left"});
-sr.reveal('.secondp', {delay: 1400, origin: "left"});
-sr.reveal('.lastp', {delay: 2500, origin: "left"});
+sr.reveal('.box1', {delay: 50, origin: "left", distance: "250px", duration: 3000});
+sr.reveal('.box2', {delay: 50, origin: "right", distance: "250px", duration: 3000});
+sr.reveal('.box3', {delay: 0, origin: "bottom", distance: "250px", duration: 3000});
+sr.reveal('.dbtn', {delay: 2000, origin: "bottom", distance: "0px", duration: 3000});
+sr.reveal('.bxs-discount', {delay: 50, origin: "bottom", distance: "220px", duration: 3000, easing: 'ease'});
+sr.reveal('.bx-cart-add', {delay: 50, origin: "bottom", distance: "220px", duration: 3000, easing: 'ease'});
 
 sr.reveal('.sq1', {delay: 350});
 sr.reveal('.sq2', {delay: 400});
@@ -72,9 +74,78 @@ sr.reveal('.sq26', {delay: 550});
 sr.reveal('.sq27', {delay: 600});
 sr.reveal('.sq28', {delay: 650});
 
+sr.reveal('.bxs-group', {delay: 100, origin: "bottom", distance: "40px", duration: 3000, easing: 'ease'});
+sr.reveal('.bxs-message-rounded', {delay: 0, origin: "bottom", distance: "60px", duration: 2500, easing: 'ease'});
+
 sr.reveal('.container', {delay: 1500, origin: "top", duration: 2000, distance: "0px"});
 sr.reveal('.ri-arrow-left-s-line', {delay: 0, origin: "right", duration: 4000, distance: "500px", opacity: 1});
 sr.reveal('.ri-arrow-right-s-line', {delay: 0, origin: "left", duration: 4000, distance: "500px", opacity: 1});
+
+// TRIGGER ANIMATION ON SCROLL
+// get the element to animate
+var elementT1 = document.getElementById('ct1id');
+var elementT2 = document.getElementById('ct2id');
+var elementT3 = document.getElementById('ct3id');
+var elementT1Height = elementT1.clientHeight;
+var elementT2Height = elementT2.clientHeight;
+var elementT3Height = elementT3.clientHeight;
+
+// check if element is in view
+function inViewT1() {
+  // get window height
+  var windowHeight = window.innerHeight;
+  // get number of pixels that the document is scrolled
+  var scrollY = window.scrollY || window.pageYOffset;
+  
+  // get current scroll position (distance from the top of the page to the bottom of the current viewport)
+  var scrollPosition = scrollY + windowHeight;
+  // get element position (distance from the top of the page to the bottom of the element)
+  var elementPosition = elementT1.getBoundingClientRect().top + scrollY + elementT1Height;
+  
+  // is scroll position greater than element position? (is element in view?)
+  if (scrollPosition > elementPosition) {
+    return true;
+  }
+  
+  return false;
+}
+function inViewT2() {
+    var windowHeight = window.innerHeight;
+    var scrollY = window.scrollY || window.pageYOffset;
+    var scrollPosition = scrollY + windowHeight;
+    var elementPosition = elementT2.getBoundingClientRect().top + scrollY + elementT2Height;
+    if (scrollPosition > elementPosition) {
+      return true;
+    }
+    return false;
+}
+  function inViewT3() {
+    var windowHeight = window.innerHeight;
+    var scrollY = window.scrollY || window.pageYOffset;
+    var scrollPosition = scrollY + windowHeight;
+    var elementPosition = elementT3.getBoundingClientRect().top + scrollY + elementT3Height;
+    if (scrollPosition > elementPosition) {
+      return true;
+    }
+    return false;
+}
+
+// listen for scroll event and call animate function
+window.addEventListener('scroll', function () {
+    // is element in view?
+    if (inViewT1()) {
+        // element is in view, add class to element
+        elementT1.style.cssText = 'margin-right: 140px; background-color: #121212a5; animation: ct1anim 7s;';
+    }
+    if (inViewT2()) {
+        // element is in view, add class to element
+        elementT2.style.cssText = 'margin-right: -140px; background-color: #121212a5; animation: ct2anim 7s;';
+    }
+    if (inViewT3()) {
+        // element is in view, add class to element
+        elementT3.style.cssText = 'font-size: 0em; font-weight: 200; -webkit-text-stroke: 0px; animation: slashanim 7s; background-color: #121212; opacity: 0;';
+    }
+});
 
 
 
@@ -105,119 +176,27 @@ window.addEventListener("scroll", function () {
 
 // MAIN PAGE CANVAS
  if(document.querySelector('title').text == "GYMDRP"){
-    (function() {
-        var COLORS, Confetti, NUM_CONFETTI, PI_2, canvas, confetti, context, drawCircle, i, range, resizeWindow, xpos;
-      
-        NUM_CONFETTI = 350;
-      
-        COLORS = [[85, 71, 106], [69, 61, 174], [56, 143, 219], [68, 94, 244], [70, 248, 236]];
-      
-        PI_2 = 2 * Math.PI;
-      
-        canvas = document.getElementById("c");
-      
-        context = canvas.getContext("2d");
-      
-        window.w = 0;
-      
-        window.h = 0;
-      
-        resizeWindow = function() {
-          window.w = canvas.width = 1150;
-          return window.h = canvas.height = 600;
-        };
-      
-        window.addEventListener('resize', resizeWindow, false);
-      
-        window.onload = function() {
-          return setTimeout(resizeWindow, 0);
-        };
-      
-        range = function(a, b) {
-          return (b - a) * Math.random() + a;
-        };
-      
-        drawCircle = function(x, y, r, style) {
-          context.beginPath();
-          context.arc(x, y, r, 0, PI_2, false);
-          context.fillStyle = style;
-          return context.fill();
-        };
-      
-        xpos = 0.5;
-      
-        window.requestAnimationFrame = (function() {
-          return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(callback) {
-            return window.setTimeout(callback, 1000 / 60);
-          };
-        })();
-      
-        Confetti = (function() {
-          function Confetti() {
-            this.style = COLORS[~~range(0, 5)];
-            this.rgb = "rgba(" + this.style[0] + "," + this.style[1] + "," + this.style[2] + ",0.25)";
-            this.r = ~~range(2, 6);
-            this.r2 = 2 * this.r;
-            this.replace();
-          }
-      
-          Confetti.prototype.replace = function() {
-            this.opacity = 0;
-            this.dop = 0.03 * range(1, 4);
-            this.x = range(-this.r2, w - this.r2);
-            this.y = range(-20, h - this.r2);
-            this.xmax = w - this.r;
-            this.ymax = h - this.r;
-            this.vx = range(0, 2) + 8 * xpos - 5;
-            return this.vy = 0.7 * this.r + range(-1, 1);
-          };
-      
-          Confetti.prototype.draw = function() {
-            var ref;
-            this.x += this.vx;
-            this.y += this.vy;
-            this.opacity += this.dop;
-            if (this.opacity > 1) {
-              this.opacity = 1;
-              this.dop *= -1;
-            }
-            if (this.opacity < 0 || this.y > this.ymax) {
-              this.replace();
-            }
-            if (!((0 < (ref = this.x) && ref < this.xmax))) {
-              this.x = (this.x + this.xmax) % this.xmax;
-            }
-            return drawCircle(~~this.x, ~~this.y, this.r, this.rgb + "," + this.opacity + ")");
-          };
-      
-          return Confetti;
-      
-        })();
-      
-        confetti = (function() {
-          var j, ref, results;
-          results = [];
-          for (i = j = 1, ref = NUM_CONFETTI; 1 <= ref ? j <= ref : j >= ref; i = 1 <= ref ? ++j : --j) {
-            results.push(new Confetti);
-          }
-          return results;
-        })();
-      
-        window.step = function() {
-          var c, j, len, results;
-          requestAnimationFrame(step);
-          context.clearRect(0, 0, w, h);
-          results = [];
-          for (j = 0, len = confetti.length; j < len; j++) {
-            c = confetti[j];
-            results.push(c.draw());
-          }
-          return results;
-        };
-      
-        step();
-      
-      }).call(this);
+    // Get the canvas element
+    let canvas = document.getElementById("canva1");
+    // Get the context
+    let ctx = canvas.getContext("2d");
+    // Create the video - can use any video url
+    let video = document.createElement("video");
+    video.src = "./loop3.mp4";
+    video.muted = "muted";
+    video.play();
+    // Set the video to loop
+    video.loop = true;
+
+    // Create a function to draw frames on the canvas
+    let draw = function () {
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+    // Repeat the draw loop
+    requestAnimationFrame(draw);
+    };
+    
+    // Call the draw loop
+    draw();
  }
 
 
