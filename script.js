@@ -81,72 +81,6 @@ sr.reveal('.container', {delay: 1500, origin: "top", duration: 2000, distance: "
 sr.reveal('.ri-arrow-left-s-line', {delay: 0, origin: "right", duration: 4000, distance: "500px", opacity: 1});
 sr.reveal('.ri-arrow-right-s-line', {delay: 0, origin: "left", duration: 4000, distance: "500px", opacity: 1});
 
-// TRIGGER ANIMATION ON SCROLL
-// get the element to animate
-var elementT1 = document.getElementById('ct1id');
-var elementT2 = document.getElementById('ct2id');
-var elementT3 = document.getElementById('ct3id');
-var elementT1Height = elementT1.clientHeight;
-var elementT2Height = elementT2.clientHeight;
-var elementT3Height = elementT3.clientHeight;
-
-// check if element is in view
-function inViewT1() {
-  // get window height
-  var windowHeight = window.innerHeight;
-  // get number of pixels that the document is scrolled
-  var scrollY = window.scrollY || window.pageYOffset;
-  
-  // get current scroll position (distance from the top of the page to the bottom of the current viewport)
-  var scrollPosition = scrollY + windowHeight;
-  // get element position (distance from the top of the page to the bottom of the element)
-  var elementPosition = elementT1.getBoundingClientRect().top + scrollY + elementT1Height;
-  
-  // is scroll position greater than element position? (is element in view?)
-  if (scrollPosition > elementPosition) {
-    return true;
-  }
-  
-  return false;
-}
-function inViewT2() {
-    var windowHeight = window.innerHeight;
-    var scrollY = window.scrollY || window.pageYOffset;
-    var scrollPosition = scrollY + windowHeight;
-    var elementPosition = elementT2.getBoundingClientRect().top + scrollY + elementT2Height;
-    if (scrollPosition > elementPosition) {
-      return true;
-    }
-    return false;
-}
-  function inViewT3() {
-    var windowHeight = window.innerHeight;
-    var scrollY = window.scrollY || window.pageYOffset;
-    var scrollPosition = scrollY + windowHeight;
-    var elementPosition = elementT3.getBoundingClientRect().top + scrollY + elementT3Height;
-    if (scrollPosition > elementPosition) {
-      return true;
-    }
-    return false;
-}
-
-// listen for scroll event and call animate function
-window.addEventListener('scroll', function () {
-    // is element in view?
-    if (inViewT1()) {
-        // element is in view, add class to element
-        elementT1.style.cssText = 'margin-right: 140px; background-color: #121212a5; animation: ct1anim 7s;';
-    }
-    if (inViewT2()) {
-        // element is in view, add class to element
-        elementT2.style.cssText = 'margin-right: -140px; background-color: #121212a5; animation: ct2anim 7s;';
-    }
-    if (inViewT3()) {
-        // element is in view, add class to element
-        elementT3.style.cssText = 'font-size: 0em; font-weight: 200; -webkit-text-stroke: 0px; animation: slashanim 7s; background-color: #121212; opacity: 0;';
-    }
-});
-
 
 
 // MAKE HEADER DISAPPEAR ON SCROLL
@@ -174,8 +108,77 @@ window.addEventListener("scroll", function () {
 
 
 
-// MAIN PAGE CANVAS
+// MAIN PAGE
  if(document.querySelector('title').text == "GYMDRP"){
+    // SCROLL ANIMATIONS
+    // get the element to animate
+    var elementT1 = document.getElementById('ct1id');
+    var elementT2 = document.getElementById('ct2id');
+    var elementT3 = document.getElementById('ct3id');
+    var elementT1Height = elementT1.clientHeight;
+    var elementT2Height = elementT2.clientHeight;
+    var elementT3Height = elementT3.clientHeight;
+
+    // check if element is in view
+    function inViewT1() {
+    // get window height
+    var windowHeight = window.innerHeight;
+    // get number of pixels that the document is scrolled
+    var scrollY = window.scrollY || window.pageYOffset;
+    
+    // get current scroll position (distance from the top of the page to the bottom of the current viewport)
+    var scrollPosition = scrollY + windowHeight;
+    // get element position (distance from the top of the page to the bottom of the element)
+    var elementPosition = elementT1.getBoundingClientRect().top + scrollY + elementT1Height;
+    
+    // is scroll position greater than element position? (is element in view?)
+    if (scrollPosition > elementPosition) {
+        return true;
+    }
+    
+    return false;
+    }
+    function inViewT2() {
+        var windowHeight = window.innerHeight;
+        var scrollY = window.scrollY || window.pageYOffset;
+        var scrollPosition = scrollY + windowHeight;
+        var elementPosition = elementT2.getBoundingClientRect().top + scrollY + elementT2Height;
+        if (scrollPosition > elementPosition) {
+        return true;
+        }
+        return false;
+    }
+    function inViewT3() {
+        var windowHeight = window.innerHeight;
+        var scrollY = window.scrollY || window.pageYOffset;
+        var scrollPosition = scrollY + windowHeight;
+        var elementPosition = elementT3.getBoundingClientRect().top + scrollY + elementT3Height;
+        if (scrollPosition > elementPosition) {
+        return true;
+        }
+        return false;
+    }
+
+    // listen for scroll event and call animate function
+    window.addEventListener('scroll', function () {
+        // is element in view?
+        if (inViewT1()) {
+            // element is in view, add class to element
+            elementT1.style.cssText = 'margin-right: 140px; background-color: #121212a5; animation: ct1anim 7s;';
+        }
+        if (inViewT2()) {
+            // element is in view, add class to element
+            elementT2.style.cssText = 'margin-right: -140px; background-color: #121212a5; animation: ct2anim 7s;';
+        }
+        if (inViewT3()) {
+            // element is in view, add class to element
+            elementT3.style.cssText = 'font-size: 0em; font-weight: 200; -webkit-text-stroke: 0px; animation: slashanim 7s; background-color: #121212; opacity: 0;';
+        }
+    });
+
+
+
+    // CANVAS
     // Get the canvas element
     let canvas = document.getElementById("canva1");
     // Get the context
