@@ -821,11 +821,66 @@ header .logo{
     transition: all .55s ease;
     opacity: 0;
     visibility: hidden;
-  }
+}
 #popup .content span{
     color: #61b752;
     margin: 15px;
     display: block;
+}
+#page-mask-temp{
+    z-index: 100001;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.8);
+    transition: all .55s ease;
+    opacity: 1;
+    visibility: visible;
+}
+#popup-temp{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000000;
+    background: white;
+    width: 900px;
+    height: 400px;
+    padding: 80px 50px 50px;
+    transition: 0.5s;
+    border-radius: 5px;
+    visibility: visible;
+}
+#popup-temp .content{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#popup-temp .content i{
+    font-size: 150px;
+    margin-bottom: 10px;
+}
+#popup-temp .dbtn-temp{
+    height: 40px;
+    width: 100px;
+    font-weight: 500;
+    position: relative;
+    color: #121212;
+    border: 2px solid #121212;
+    background: white;
+    padding: 9px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    text-align: center;
+}
+#popup-temp .dbtn-temp:hover{
+    color: white;
+    background: #121212;
 }
 /* EXPLORER PAGE */
 .main-exp{
@@ -865,6 +920,9 @@ header .logo{
     align-items: center;
     justify-content: center;
     border-bottom: 1px solid #252525;
+}
+.main-exp2:nth-child(even){
+    background: repeating-linear-gradient(-45deg, #171717, #171717 1px, transparent 1px, transparent 60px), repeating-linear-gradient(45deg, #171717, #171717 1px, #121212 1px, #121212 60px);
 }
 .main-exp2 .main-img-exp{
     width: 100%;
@@ -914,11 +972,11 @@ header .logo{
     gap: 25px;
     margin-top: 45px;
 }
-/* STATISTICS PAGE */
-.main-stat{
+/* DEALS PAGE */
+.main-deals{
     height: 100%;
     width: 100%;
-    min-height: 100vh;
+    min-height: 87vh;
     background: repeating-linear-gradient(-45deg, #151515, #151515 1px, transparent 1px, transparent 60px), repeating-linear-gradient(45deg, #151515, #151515 1px, #121212 1px, #121212 60px);
     position: relative;
     display: flex;
@@ -926,22 +984,111 @@ header .logo{
     justify-content: center;
     border-bottom: 1px solid #252525;
 }
-.main-text-stat{
+.main-text-deals{
     text-align: center;
-    margin-top: 100px;
+    margin-top: 50px;
 }
-.main-text-stat h1{
+.main-text-deals h1{
     font-size: 40px;
     font-weight: 500;
     color: white;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    transition: all .3s ease;
 }
-.main-text-stat p{
+.main-text-deals p{
     font-weight: 200;
     font-size: 18px;
-    margin-bottom: 0px;
     color: rgba(255, 255, 255, 0.25);
     text-align: center;
+    margin-right: 10px;
+    margin-left: 10px;
+    transition: all .3s ease;
+}
+.main-text-deals .box{
+    border: 1px solid #373737;
+    height: 200px;
+    width: 400px;
+    margin: 15px;
+    border-radius: 10px;
+    display: inline-block;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.main-text-deals .box:hover{
+    border: 1px solid #5a5a5a;
+}
+.main-text-deals .box h1{
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-weight: 400;
+    color: #5a5a5a;
+}
+.main-text-deals .box #colorTxt{
+    font-weight: 300;
+    font-size: 30px;
+    background:linear-gradient(122.25deg, #63d5ff 12.16%, #4c64ff 90.98%);
+    background-clip: text;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    opacity: 0;
+    transition: all .3s ease;
+}
+.main-text-deals .box:hover h1{
+    color: white;
+}
+.main-text-deals .box:hover p{
+    color: rgba(255, 255, 255, 0.5);
+}
+.main-text-deals .box:hover #colorTxt{
+    opacity: 1;
+}
+.main-text-deals .box:hover .hide{
+    opacity: 0;
+}
+.main-text-deals .hide{
+    background: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    transition: all 1s ease;
+}
+.main-text-deals .h1{
+    width: 75px;
+    height: 30px;
+    bottom: 44%;
+    left: 26%;
+}
+.main-text-deals .h2{
+    width: 60px;
+    height: 30px;
+    bottom: 44%;
+    right: 40.4%;
+}
+.main-text-deals .h3{
+    width: 60px;
+    height: 30px;
+    bottom: 44%;
+    right: 12.15%;
+}
+.main-deals2{
+    height: 100%;
+    width: 100%;
+    min-height: 66vh;
+    background: repeating-linear-gradient(-45deg, #151515, #151515 1px, transparent 1px, transparent 60px), repeating-linear-gradient(45deg, #151515, #151515 1px, #121212 1px, #121212 60px);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #252525;
+}
+.main-deals3{
+    height: 100%;
+    width: 100%;
+    min-height: 38vh;
+    background: repeating-linear-gradient(-45deg, #151515, #151515 1px, transparent 1px, transparent 60px), repeating-linear-gradient(45deg, #151515, #151515 1px, #121212 1px, #121212 60px);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #252525;
 }
 /* SCROLLREVEAL FIXES */
 html.sr .container{
