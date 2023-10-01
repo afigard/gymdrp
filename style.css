@@ -63,6 +63,9 @@ header .logo{
     display: none;
 }
 /* MAIN PAGE */
+.main-text-mobile{
+    display: none;
+}
 .main{
     height: 100%;
     width: 100%;
@@ -1140,25 +1143,51 @@ html {
 }
 @media (max-width: 990px){
     /* main menu */
-    header .sign-up button{
+    .main-text-mobile{
+        display: flex;
+        color: white;
+        background-color: #121212;
+        min-height: 100vh;
+        text-align: center;
+    }
+    .main-text-mobile .text-mobile{
+        position: absolute;
+        top: 30%;
+    }
+    .main-text-mobile .text-mobile h2{
+        margin-left: 35px;
+        margin-right: 35px;
+    }
+    .main-text-mobile .text-mobile h3{
+        font-weight: 200;
+        margin-top: 30px;
+        margin-left: 35px;
+        margin-right: 35px;
+    }
+    .main-text-mobile .text-mobile h5{
+        font-weight: 200;
+        margin-top: 50px;
+        margin-bottom: 75px;
+    }
+    header{
         display: none;
     }
-    .main-text h1{
-        font-size: 30px;
-        margin-right: 80px;
-        margin-left: 80px;
-        text-align: center;
+    .main{
+        display: none;
     }
-    .main-text p{
-        font-size: 10px;
-        margin-bottom: 80px;
-        margin-right: 80px;
-        margin-left: 80px;
-        text-align: center;
+    .main-text{
+        display: none;
     }
-    .main-text a{
-        font-size: 10px;
+    .main2{
+        display: none;
     }
+    .main3{
+        display: none;
+    }
+    .main4{
+        display: none;
+    }
+    /*
     #menu-icon{
         display: block;
         margin-top: 0px;
@@ -1263,6 +1292,7 @@ html {
         padding-left: 15px;
         padding-right: 15px;
     }
+    */
     /* calendar */
     body{
         align-items: flex-start;
@@ -1327,20 +1357,6 @@ html {
     }
     .navlist button{
         display: none;
-    }
-    /* statistics */
-    .main-text-stat h1{
-        font-size: 30px;
-        margin-right: 80px;
-        margin-left: 80px;
-        text-align: center;
-    }
-    .main-text-stat p{
-        font-size: 10px;
-        margin-bottom: 80px;
-        margin-right: 80px;
-        margin-left: 80px;
-        text-align: center;
     }
     /* about */
     .main-text-exp p{
