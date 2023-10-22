@@ -124,10 +124,10 @@ header .logo{
 .main-text .r1{
     position: absolute;
     border: none;
-    color: #ff4c4c;
-    font-size: 90px;
+    color: #ff4c4cca;
+    font-size: 50px;
     margin-top: 135px;
-    margin-left: -100px;
+    margin-left: -81px;
     opacity: 0.65;
 }
 .main-text .bxs-calendar{
@@ -286,6 +286,15 @@ header .logo{
     color: #121212;
     background: #4c64ff;
 }
+.main2 .main-text .r2{
+    position: absolute;
+    border: none;
+    color: #4c64ffca;
+    font-size: 40px;
+    margin-top: 165px;
+    margin-left: -223px;
+    opacity: 0.65;
+}
 .main2 .main-text .bxs-discount{
     font-size: 400px;
     position: absolute;
@@ -375,7 +384,7 @@ header .logo{
     position: relative;
     z-index: 2;
 }
-.main4 a{
+.main4 .btnCom{
     position: relative;
     top: 0%;
     color: #121212;
@@ -386,7 +395,12 @@ header .logo{
     border-radius: 5px;
     font-size: 14px;
     text-align: center;
-    margin: auto;
+    margin-top: 60px;
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: 25px;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 .main4 a:hover{
     border: 1px solid rgba(255, 255, 255, 0.9);
@@ -395,13 +409,15 @@ header .logo{
 .main4 .buttons4{
     margin-top: 60px;
 }
-.main4 .buttons4 a{
-    margin-top: 60px;
-    margin-right: 20px;
-    margin-left: 20px;
-    font-size: 25px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+.main4 .main-text .r3{
+    position: absolute;
+    border: none;
+    color: #e14cffca;
+    font-size: 50px;
+    margin-top: -210px;
+    margin-left: 230px;
+    opacity: 0.65;
+    z-index: 2;
 }
 .main4 .main-text .bxs-group{
     font-size: 300px;

@@ -45,8 +45,7 @@ const sr = ScrollReveal ({
     reset: false
 });
 
-sr.reveal('.r0', {delay: 2000, origin: "top", distance: "50px", duration: 3000});
-sr.reveal('.r1', {delay: 1000, origin: "top", distance: "50px", duration: 3000});
+sr.reveal('.r1', {delay: 1750, origin: "top", distance: "75px", duration: 3000});
 sr.reveal('.bxs-calendar', {delay: 50, origin: "bottom", distance: "220px", duration: 3000, easing: 'ease'});
 sr.reveal('.bxs-t-shirt', {delay: 50, origin: "bottom", distance: "220px", duration: 3000, easing: 'ease'});
 
@@ -54,6 +53,7 @@ sr.reveal('.box1', {delay: 50, origin: "left", distance: "250px", duration: 3000
 sr.reveal('.box2', {delay: 50, origin: "right", distance: "250px", duration: 3000});
 sr.reveal('.box3', {delay: 0, origin: "bottom", distance: "250px", duration: 3000});
 sr.reveal('.dbtn', {delay: 2000, origin: "bottom", distance: "0px", duration: 3000});
+sr.reveal('.r2', {delay: 3000, origin: "top", distance: "50px", duration: 3000});
 sr.reveal('.bxs-discount', {delay: 50, origin: "bottom", distance: "220px", duration: 3000, easing: 'ease'});
 sr.reveal('.bx-cart-add', {delay: 50, origin: "bottom", distance: "220px", duration: 3000, easing: 'ease'});
 
@@ -89,6 +89,7 @@ sr.reveal('.sq26', {delay: 550});
 sr.reveal('.sq27', {delay: 600});
 sr.reveal('.sq28', {delay: 650});
 
+sr.reveal('.r3', {delay: 1000, origin: "left", distance: "100px", duration: 3000});
 sr.reveal('.bxs-group', {delay: 100, origin: "bottom", distance: "40px", duration: 3000, easing: 'ease'});
 sr.reveal('.bxs-message-rounded', {delay: 0, origin: "bottom", distance: "60px", duration: 2500, easing: 'ease'});
 
