@@ -69,7 +69,7 @@ header .logo{
 .main{
     height: 100%;
     width: 100%;
-    min-height: 185vh;
+    min-height: 100vh;
     background: #121212;
     position: relative;
     display: flex;
@@ -79,7 +79,7 @@ header .logo{
 }
 .main-text{
     text-align: center;
-    margin-top: 130px;
+    margin-top: 20px;
 }
 .main-text h1{
     font-size: 40px;
@@ -88,7 +88,7 @@ header .logo{
 .main-text p{
     font-weight: 200;
     font-size: 18px;
-    margin-bottom: 230px;
+    margin-bottom: 0px;
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
 }
@@ -97,73 +97,61 @@ header .logo{
     align-items: center;
     justify-content: center;
 }
-.main-text a{
-    position: absolute;
+.main-text .btnCalendar{
     color: #ff4c4c;
     border: 2px solid #ff4c4c;
     background: #121212;
-    box-shadow: 0 0 0px white;
     padding: 18px 27px;
     border-radius: 15px;
     font-size: 14px;
     text-align: center;
-    margin-bottom: 850px;
+    margin-top: 50px;
+    margin-bottom: 25px;
 }
 .main-text a:hover{
     color: #121212;
     background: #ff4c4c;
 }
-.main-text #canva1{
-    display: flex;
-    border:1px solid #252525;
-    border-radius: 10px;
-    box-shadow: 0 0 100px rgba(255, 255, 255, 0.2);
-    background: #121212;
-    margin-bottom: 15px;
-}
-.main-text .canvatext{
+.main-text .r0{
     position: absolute;
-    z-index: 1;
+    border: none;
+    color: #ff4c4c;
+    font-size: 70px;
+    margin-top: 125px;
+    margin-left: -90px;
+    opacity: 0.65;
 }
-.main-text .canvatext h1{
+.main-text .r1{
     position: absolute;
-    top: 50%; 
-    right: 50%;
-    transform: translate(50%,-50%);
-    font-size: 8em;
-    font-weight: 700;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-    -webkit-text-stroke: 3px #ff4c4c;
+    border: none;
+    color: #ff4c4c;
+    font-size: 90px;
+    margin-top: 135px;
+    margin-left: -100px;
+    opacity: 0.65;
 }
-@keyframes ct1anim {
-    0% {transform: translate(50%,-50%);opacity: 0;}
-    15% {transform: translate(49%,-50%);opacity: 0;}
-    30% {transform: translate(15%,-50%);opacity: 0.75;}
-    100% {transform: translate(50%,-50%);opacity: 1;}
+.main-text .bxs-calendar{
+    font-size: 400px;
+    position: absolute;
+    color: #ff4c4c20;
+    right: 12%;
+    bottom: 15%;
+    z-index: 0;
+    transform: rotate(30deg);
 }
-@keyframes ct2anim {
-    0% {transform: translate(50%,-50%);opacity: 0;}
-    15% {transform: translate(51%,-50%);opacity: 0;}
-    30% {transform: translate(85%,-50%);opacity: 0.75;}
-    100% {transform: translate(50%,-50%);opacity: 1;}
-}
-@keyframes slashanim {
-    0% {opacity: 1; font-size: 0em; transform: translate(50%,-50%);}
-    15% {opacity: 1; font-size: 12em; transform: translate(50%,-50%);}
-    35% {opacity: 1; font-size: 10em; transform: translate(50%,-50%) rotate(78deg);}
-    60% {font-size: 0em; transform: translate(50%,-50%) rotate(180deg);}
-    100% {opacity: 0; font-size: 0em; transform: translate(50%,-50%) rotate(180deg);}
-}
-.main-text img{
-    margin-top: 40px;
+.main-text .bxs-t-shirt{
+    font-size: 400px;
+    position: absolute;
+    color: #ff4c4c20;
+    right: 63%;
+    bottom: 5%;
+    z-index: 0;
+    transform: rotate(-40deg);
 }
 .main2{
     height: 100%;
     width: 100%;
-    min-height: 102vh;
+    min-height: 100vh;
     background: repeating-linear-gradient(-45deg, #171717, #171717 1px, transparent 1px, transparent 60px), repeating-linear-gradient(45deg, #171717, #171717 1px, #121212 1px, #121212 60px);
     position: relative;
     display: flex;
@@ -228,7 +216,7 @@ header .logo{
     margin-right: 20px;
     margin-top: 20px;
     color: rgba(255, 255, 255, 0.2);
-    filter: blur(1.5px);
+    filter: blur(0.5px);
 }
 .main2 .main-text .b1:hover{
     box-shadow: 0 0 15px #4c64ff3c;
@@ -285,7 +273,7 @@ header .logo{
 .main2 .main-text .dbtn{
     height: 60px;
     position: relative;
-    margin-top: 850px;
+    margin-top: 10px;
     color: #4c64ff;
     border: 2px solid #4c64ff;
     background: #121212;
@@ -341,7 +329,6 @@ header .logo{
     color: #5bff4c;
     border: 2px solid #5bff4c;
     background: #121212;
-    box-shadow: 0 0 0px white;
     padding: 18px 27px;
     border-radius: 15px;
     font-size: 14px;

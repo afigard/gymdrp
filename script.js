@@ -45,6 +45,11 @@ const sr = ScrollReveal ({
     reset: false
 });
 
+sr.reveal('.r0', {delay: 2000, origin: "top", distance: "50px", duration: 3000});
+sr.reveal('.r1', {delay: 1000, origin: "top", distance: "50px", duration: 3000});
+sr.reveal('.bxs-calendar', {delay: 50, origin: "bottom", distance: "220px", duration: 3000, easing: 'ease'});
+sr.reveal('.bxs-t-shirt', {delay: 50, origin: "bottom", distance: "220px", duration: 3000, easing: 'ease'});
+
 sr.reveal('.box1', {delay: 50, origin: "left", distance: "250px", duration: 3000});
 sr.reveal('.box2', {delay: 50, origin: "right", distance: "250px", duration: 3000});
 sr.reveal('.box3', {delay: 0, origin: "bottom", distance: "250px", duration: 3000});
