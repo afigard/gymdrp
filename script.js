@@ -45,7 +45,6 @@ const sr = ScrollReveal ({
     reset: false
 });
 
-sr.reveal('.r1', {delay: 1750, origin: "top", distance: "75px", duration: 3000});
 sr.reveal('.bxs-calendar', {delay: 50, origin: "bottom", distance: "220px", duration: 3000, easing: 'ease'});
 sr.reveal('.bxs-t-shirt', {delay: 50, origin: "bottom", distance: "220px", duration: 3000, easing: 'ease'});
 
@@ -53,7 +52,6 @@ sr.reveal('.box1', {delay: 50, origin: "left", distance: "250px", duration: 3000
 sr.reveal('.box2', {delay: 50, origin: "right", distance: "250px", duration: 3000});
 sr.reveal('.box3', {delay: 0, origin: "bottom", distance: "250px", duration: 3000});
 sr.reveal('.dbtn', {delay: 2000, origin: "bottom", distance: "0px", duration: 3000});
-sr.reveal('.r2', {delay: 3000, origin: "top", distance: "50px", duration: 3000});
 sr.reveal('.bxs-discount', {delay: 50, origin: "bottom", distance: "220px", duration: 3000, easing: 'ease'});
 sr.reveal('.bx-cart-add', {delay: 50, origin: "bottom", distance: "220px", duration: 3000, easing: 'ease'});
 
@@ -89,7 +87,6 @@ sr.reveal('.sq26', {delay: 550});
 sr.reveal('.sq27', {delay: 600});
 sr.reveal('.sq28', {delay: 650});
 
-sr.reveal('.r3', {delay: 1000, origin: "left", distance: "100px", duration: 3000});
 sr.reveal('.bxs-group', {delay: 100, origin: "bottom", distance: "40px", duration: 3000, easing: 'ease'});
 sr.reveal('.bxs-message-rounded', {delay: 0, origin: "bottom", distance: "60px", duration: 2500, easing: 'ease'});
 
@@ -122,106 +119,65 @@ window.addEventListener("scroll", function () {
     navlist.classList.toggle('open');
  }
 
-
-
 // MAIN PAGE
- if(document.querySelector('title').text == "GYMDRP"){
-    // SCROLL ANIMATIONS
-    // get the element to animate
-    var elementT1 = document.getElementById('ct1id');
-    var elementT2 = document.getElementById('ct2id');
-    var elementT3 = document.getElementById('ct3id');
-    var elementT1Height = elementT1.clientHeight;
-    var elementT2Height = elementT2.clientHeight;
-    var elementT3Height = elementT3.clientHeight;
+if(document.querySelector('title').text == "gymDRP") {
+    const slides = document.querySelectorAll(".slide");
+    const dotsNav = document.querySelectorAll(".dotNav")
+    var counter = 0;
+    slides.forEach(
+        (slide, index) => {
+            slide.style.left = `${index * 100}%`;
+        }
+    )
 
-    // check if element is in view
-    function inViewT1() {
-    // get window height
-    var windowHeight = window.innerHeight;
-    // get number of pixels that the document is scrolled
-    var scrollY = window.scrollY || window.pageYOffset;
-    
-    // get current scroll position (distance from the top of the page to the bottom of the current viewport)
-    var scrollPosition = scrollY + windowHeight;
-    // get element position (distance from the top of the page to the bottom of the element)
-    var elementPosition = elementT1.getBoundingClientRect().top + scrollY + elementT1Height;
-    
-    // is scroll position greater than element position? (is element in view?)
-    if (scrollPosition > elementPosition) {
-        return true;
-    }
-    
-    return false;
-    }
-    function inViewT2() {
-        var windowHeight = window.innerHeight;
-        var scrollY = window.scrollY || window.pageYOffset;
-        var scrollPosition = scrollY + windowHeight;
-        var elementPosition = elementT2.getBoundingClientRect().top + scrollY + elementT2Height;
-        if (scrollPosition > elementPosition) {
-        return true;
+    function goPrev() {
+        counter--;
+        if(counter == -1) {
+            counter = 1;
         }
-        return false;
-    }
-    function inViewT3() {
-        var windowHeight = window.innerHeight;
-        var scrollY = window.scrollY || window.pageYOffset;
-        var scrollPosition = scrollY + windowHeight;
-        var elementPosition = elementT3.getBoundingClientRect().top + scrollY + elementT3Height;
-        if (scrollPosition > elementPosition) {
-        return true;
+        if (counter == 0) {
+            dotsNav[0].style.background = "#555555"
+            dotsNav[1].style.background = "white"
         }
-        return false;
+        else {
+            dotsNav[0].style.background = "white"
+            dotsNav[1].style.background = "#555555"
+        }
+        slideImage();
     }
 
-    // listen for scroll event and call animate function
-    window.addEventListener('scroll', function () {
-        // is element in view?
-        if (inViewT1()) {
-            // element is in view, add class to element
-            elementT1.style.cssText = 'margin-right: 140px; background-color: #121212a5; animation: ct1anim 7s;';
+    function goNext() {
+        counter++;
+        if(counter == 2) {
+            counter = 0;
         }
-        if (inViewT2()) {
-            // element is in view, add class to element
-            elementT2.style.cssText = 'margin-right: -140px; background-color: #121212a5; animation: ct2anim 7s;';
+        if (counter == 0) {
+            dotsNav[0].style.background = "#555555"
+            dotsNav[1].style.background = "white"
         }
-        if (inViewT3()) {
-            // element is in view, add class to element
-            elementT3.style.cssText = 'font-size: 0em; font-weight: 200; -webkit-text-stroke: 0px; animation: slashanim 7s; background-color: #121212; opacity: 0;';
+        else {
+            dotsNav[0].style.background = "white"
+            dotsNav[1].style.background = "#555555"
         }
-    });
+        slideImage();
+    }
 
+    const slideImage = () => {
+        slides.forEach(
+            (slide) => {
+                slide.style.transform = `translateX(-${counter*100}%)`;
+            }
+        )
+    }
 
-
-    // CANVAS
-    // Get the canvas element
-    let canvas = document.getElementById("canva1");
-    // Get the context
-    let ctx = canvas.getContext("2d");
-    // Create the video - can use any video url
-    let video = document.createElement("video");
-    video.src = "./loop3.mp4";
-    video.muted = "muted";
-    video.play();
-    // Set the video to loop
-    video.loop = true;
-
-    // Create a function to draw frames on the canvas
-    let draw = function () {
-    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-    // Repeat the draw loop
-    requestAnimationFrame(draw);
-    };
-    
-    // Call the draw loop
-    draw();
- }
-
+    setInterval(function() {
+        goNext();
+    }, 8000);
+}
 
 
  // CALENDAR PAGE
- if(document.querySelector('title').text == "Calendar | GYMDRP"){
+ if(document.querySelector('title').text == "Calendar | gymDRP"){
     window.onload = () => {setTimeout(() => {}, 1500);};
     const calendar = document.querySelector(".calendar");
     const date = document.querySelector(".date");

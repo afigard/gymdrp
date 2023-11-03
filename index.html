@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
-    <title>GYMDRP</title>
+    <title>gymDRP</title>
     <link rel="icon" href="img/logo-sb.png" type="image/x-icon">
 
     <!-- scrollreveal link -->
@@ -30,11 +30,10 @@
 
     <header id="h">
         <div class="logo">
-            <li>GYMDRP</li>
+            <li><a href="./">gymDRP</a></li>
         </div>
 
         <ul class="navlist">
-            <li><a href="./">Home</a></li>
             <li><a href="./calendar">Calendar</a></li>
             <li><a href="./deals">Deals</a></li>
             <li><a href="./explorer">Explorer</a></li>
@@ -75,13 +74,29 @@
     </div>
     <section class="main" id="calendar">
         <div class="main-text">
-            <h1>The<span style="background:linear-gradient(122.25deg, #ffb963 12.16%, #ff4c4c 90.98%);background-clip: text;-webkit-background-clip:text;-webkit-text-fill-color:transparent"> high-tech </span>website about<span style="background:linear-gradient(122.25deg, #ffb963 12.16%, #ff4c4c 90.98%);background-clip: text;-webkit-background-clip:text;-webkit-text-fill-color:transparent"> gym </span>brands.</h1>
+            <h1>The<span style="background:linear-gradient(122.25deg, #ffb963 12.16%, #ff4c4c 90.98%);background-clip: text;-webkit-background-clip:text;-webkit-text-fill-color:transparent"> all-in-one </span>website about<span style="background:linear-gradient(122.25deg, #ffb963 12.16%, #ff4c4c 90.98%);background-clip: text;-webkit-background-clip:text;-webkit-text-fill-color:transparent"> gym </span>brands.</h1>
             <p>Get access to all the latest releases in the fitness industry. Never miss a drop again.</p>
-            <div class="top1">
+            <h3>Best events of November :</h3>
+            <div class="slidercontainer">
+                <button onclick="goPrev()" class="btnPrev">
+                    <i class="saLeft ri-arrow-left-s-fill"></i>
+                </button>
+                <div class="slider">
+                    <img src="img/novRelease1.png" class="slide">
+                    <img src="img/novRelease2.png" class="slide">
+                </div>
+                <button onclick="goNext()" class="btnNext">
+                    <i class="saRight ri-arrow-right-s-fill"></i>
+                </button>
+            </div>
+            <div class="slidernav">
+                <button class="dotNav dotSelected"></button>
+                <button class="dotNav"></button>
+            </div>
+            <div class="main-bottom">
                 <a class="btnCalendar" href="./calendar">Check out Calendar&#8482;</a>
             </div>
             <img src="img/logo.png" width="110px" height="110px">
-            <a href="#deals"><i class="r1 ri-arrow-down-circle-fill"></i></a>
             <div>
                 <i class='bx bxs-calendar'></i>
             </div>
@@ -93,7 +108,7 @@
 
     <div class="main2" id="deals">
         <div class="main-text">
-            <h1>Get access to the <span style="background:linear-gradient(122.25deg, #63d5ff 12.16%, #4c64ff 90.98%);background-clip: text;-webkit-background-clip:text;-webkit-text-fill-color:transparent"> latest </span>discounts.</h1>
+            <h1>Get access to the <span style="background:linear-gradient(122.25deg, #63d5ff 12.16%, #4c64ff 90.98%);background-clip: text;-webkit-background-clip:text;-webkit-text-fill-color:transparent"> greatest </span>discounts.</h1>
             <div class="grid-deals">
                 <div class="box1">
                     <div class="b1 b1a">
@@ -118,7 +133,6 @@
                 <div class="b1 shadow">
                     <a href="./deals" class="dbtn">Discover Deals&#8482;</a>
                 </div>
-                <a href="#explorer"><i class="r2 ri-arrow-down-circle-fill"></i></a>
             </div>
             <div>
                 <i class='bx bxs-discount'></i>
@@ -233,7 +247,6 @@
                 <a class="btnCom" href="https://www.instagram.com/gymdrp/" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line"></i></a>
                 <a class="btnCom" href="https://www.paypal.com/donate/?business=VVAPGTVXSAW8J&no_recurring=0&item_name=Support+the+website+if+you+like+it.+Thank+you%21&currency_code=USD" target="_blank" rel="noopener noreferrer"><i class="ri-paypal-line"></i></a>
             </div>
-            <a href="#calendar"><i class="r3 ri-arrow-up-circle-fill"></i></a>
             <div>
                 <i class='bx bxs-group'></i>
             </div>
