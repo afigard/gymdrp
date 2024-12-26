@@ -1,8 +1,8 @@
 # gymdrp
 
-gymdrp is a website that is currently being rebuilt. It was initially built with HTML, CSS, and JS (without any frameworks).
+gymdrp is a website currently undergoing redevelopment. Initially, it was built using HTML, CSS, and JavaScript (without any frameworks).
 
-The goal is to create a web platform centralizing all the information about the most popular fitness-apparel and fitness-supplements brands.
+The goal is to create a web platform that centralizes information about the most popular fitness apparel and supplement brands.
 
 ### Features
 
