@@ -1,6 +1,6 @@
 # gymDRP
 
-gymdrp is a website currently undergoing redevelopment. Initially, it was built using HTML, CSS, and JavaScript (without any frameworks).
+gymDRP is a website currently undergoing redevelopment. Initially, it was built using HTML, CSS, and JavaScript (without any frameworks). It is currently being rebuilt using [Astro](https://astro.build/).
 
 The goal is to create a web platform that centralizes information about the most popular fitness apparel and supplement brands.
 
