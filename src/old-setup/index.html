@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+    <title>gymDRP</title>
+    <link rel="icon" href="img/logo-sb.png" type="image/x-icon">
+
+    <!-- scrollreveal link -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- custom CSS links -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- boxicons link -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <!-- remixicon link -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.3.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- google fonts link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+    <header id="h">
+        <div class="logo">
+            <li><a href="./">gymDRP</a></li>
+        </div>
+
+        <ul class="navlist">
+            <li><a href="./calendar">Calendar</a></li>
+            <li><a href="./deals">Deals</a></li>
+            <li><a href="./explorer">Explorer</a></li>
+        </ul>
+
+        <div class="sign-up">
+            <button onclick="popupToggleOn()">Sign up</button>
+        </div>
+
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+
+    <div id="popup">
+        <div class="content">
+            <h2>Become an exclusive Member</h2>
+            <p>Get privileged access, preview of upcoming updates, and much more.</p>
+            <p>(Limited to 1000 spots.)</p>
+            <form name="submit-to-google-sheet">
+                <div class="inputBox1">
+                    <input type="email" name="Email" placeholder="your email" required>
+                </div>
+                <div class="inputBox2" id="submitbox">
+                    <input type="submit" value="Sign up">
+                </div>
+            </form>
+            <span id="msg"></span>
+        </div>
+        <i class="ri-close-circle-line" onclick="popupToggleOff()"></i>
+    </div>
+
+    <div class="main-text-mobile">
+        <div class="text-mobile">
+            <h2>Sorry, this website is not yet available on mobile.</h3>
+            <h3>In the meantime, you can check the website on desktops.</h2>
+            <h5>Get updates on Instagram at @gymdrp.</h5>
+            <img src="img/logo.png" width="70px" height="70px">
+        </div>
+    </div>
+    <section class="main" id="calendar">
+        <div class="main-text">
+            <h1>The<span style="background:linear-gradient(122.25deg, #ffb963 12.16%, #ff4c4c 90.98%);background-clip: text;-webkit-background-clip:text;-webkit-text-fill-color:transparent"> all-in-one </span>website about<span style="background:linear-gradient(122.25deg, #ffb963 12.16%, #ff4c4c 90.98%);background-clip: text;-webkit-background-clip:text;-webkit-text-fill-color:transparent"> gym </span>brands.</h1>
+            <p>Get access to all the latest releases in the fitness industry. Never miss a drop again.</p>
+            <h3>Best events of November :</h3>
+            <div class="slidercontainer">
+                <button onclick="goPrev()" class="btnPrev">
+                    <i class="saLeft ri-arrow-left-s-fill"></i>
+                </button>
+                <div class="slider">
+                    <img src="img/novRelease1.png" class="slide">
+                    <img src="img/novRelease2.png" class="slide">
+                </div>
+                <button onclick="goNext()" class="btnNext">
+                    <i class="saRight ri-arrow-right-s-fill"></i>
+                </button>
+            </div>
+            <div class="slidernav">
+                <button class="dotNav dotSelected"></button>
+                <button class="dotNav"></button>
+            </div>
+            <div class="main-bottom">
+                <a class="btnCalendar" href="./calendar">Check out Calendar&#8482;</a>
+            </div>
+            <img src="img/logo.png" width="110px" height="110px">
+            <div>
+                <i class='bx bxs-calendar'></i>
+            </div>
+            <div>
+                <i class='bx bxs-t-shirt'></i>
+            </div>
+        </div>
+    </section>
+
+    <div class="main2" id="deals">
+        <div class="main-text">
+            <h1>Get access to the <span style="background:linear-gradient(122.25deg, #63d5ff 12.16%, #4c64ff 90.98%);background-clip: text;-webkit-background-clip:text;-webkit-text-fill-color:transparent"> greatest </span>discounts.</h1>
+            <div class="grid-deals">
+                <div class="box1">
+                    <div class="b1 b1a">
+                        <h1>Up-to-date codes</h1>
+                        <p>Updated on a regular basis, find the latest available discount codes for every brand. This includes one-time offers, subscription offers, annual sales, and much more.</p>
+                    </div>
+                </div>
+                <div class="box2">
+                    <div class="b1 b1b">
+                        <h1>Automated purchasing</h1>
+                        <p>Not getting the gear you want? Don't miss any upcoming drops by automating your purchases.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-deals">
+                <div class="box3">
+                    <div class="b1 b1c">
+                        <h1>Significant savings</h1>
+                        <p>Save up to 40% on selected collections, enjoy free shipping when available, and see how much you can save with bundle options.<br>Never pay full price again.</p>
+                    </div>
+                </div>
+                <div class="b1 shadow">
+                    <a href="./deals" class="dbtn">Discover Deals&#8482;</a>
+                </div>
+            </div>
+            <div>
+                <i class='bx bxs-discount'></i>
+            </div>
+            <div>
+                <i class='bx bx-cart-add'></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="main3" id="explorer">
+        <div class="main-text">
+            <h1>An<span style="background:linear-gradient(122.25deg, #d0ff63 12.16%, #5bff4c 90.98%);background-clip: text;-webkit-background-clip:text;-webkit-text-fill-color:transparent"> extensive </span>range of brands.</h1>
+            <p>From apparel to supplements, from vintage to ultramodern,<br>There's something for everyone.</p>
+            <a href="./explorer">Browse Explorer&#8482;</a>
+        </div>
+        <div class="gallery-container">
+            <div class="img-container sq1">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq2">
+                <img src="img/main1.png" style="opacity: 0.1;">
+            </div>
+            <div class="img-container sq3">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq4">
+                <img src="img/main2.jpg" style="opacity: 0.1;">
+            </div>
+            <div class="img-container sq5">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq6">
+                <img src="img/main3.jpg" style="opacity: 0.1;">
+            </div>
+            <div class="img-container sq7">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq8">
+                <img src="img/main12.png" style="opacity: 0.1;">
+            </div>
+            <div class="img-container sq9">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq10">
+                <img src="img/main4.png" style="opacity: 0.1;">
+            </div>
+            <div class="img-container sq11">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq12">
+                <img src="img/main5.png" style="background: white; opacity: 0.1;">
+            </div>
+            <div class="img-container sq13">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq14">
+                <img src="img/main13.png" style="opacity: 0.1;">
+            </div>
+            <div class="img-container sq15">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq16">
+                <img src="img/main6.jpg" style="opacity: 0.1;">
+            </div>
+            <div class="img-container sq17">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq18">
+                <img src="img/main7.jpg" style="opacity: 0.1;">
+            </div>
+            <div class="img-container sq19">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq20">
+                <img src="img/main8.jpg" style="opacity: 0.1;">
+            </div>
+            <div class="img-container sq21">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq22">
+                <img src="img/main14.jpg" style="opacity: 0.1;">
+            </div>
+            <div class="img-container sq23">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq24">
+                <img src="img/main9.jpg" style="opacity: 0.1;">
+            </div>
+            <div class="img-container sq25">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq26">
+                <img src="img/main10.jpg" style="opacity: 0.1;">
+            </div>
+            <div class="img-container sq27">
+                <img src="img/white-sq.png" style="opacity: 0.05;">
+            </div>
+            <div class="img-container sq28">
+                <img src="img/main11.jpeg" style="opacity: 0.1;">
+            </div>
+        </div>
+    </div>
+
+    <div class="main4">
+        <div class="main-text">
+            <h1>Built on<span style="background:linear-gradient(122.25deg, #ff63b4 12.16%, #e14cff 90.98%);background-clip: text;-webkit-background-clip:text;-webkit-text-fill-color:transparent"> community</span>.</h1>
+            <p>Thriving from feedbacks, this website aims to be the best for its users.</p>
+            <p>Feel free to send any idea or remark, report any issue, or give support if you can.</p>
+            <div class="buttons4">
+                <a class="btnCom" href="mailto:gymdrp@gmail.com"><i class="ri-mail-send-line"></i></a>
+                <a class="btnCom" href="https://www.instagram.com/gymdrp/" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line"></i></a>
+                <a class="btnCom" href="https://www.paypal.com/donate/?business=VVAPGTVXSAW8J&no_recurring=0&item_name=Support+the+website+if+you+like+it.+Thank+you%21&currency_code=USD" target="_blank" rel="noopener noreferrer"><i class="ri-paypal-line"></i></a>
+            </div>
+            <div>
+                <i class='bx bxs-group'></i>
+            </div>
+            <div>
+                <i class='bx bxs-message-rounded'></i>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-mask"></div>
+
+    <!-- custom JS link -->
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-# gymdrp
+# gymDRP
 
 gymdrp is a website currently undergoing redevelopment. Initially, it was built using HTML, CSS, and JavaScript (without any frameworks).
 

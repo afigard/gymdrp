@@ -1,0 +1,19 @@
+---
+// Props: { beforeGradText, gradient, gradientText, afterGradText, content, buttonText, buttonLink }
+const { beforeGradText, gradient, gradientText, afterGradText, content, buttonText, buttonLink } = Astro.props;
+---
+<section class="main">
+  <div class="hero-text">
+    <h1>
+      {beforeGradText}
+      <span style={`background: linear-gradient(${gradient}); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;`}>
+        {gradientText}
+      </span>
+      {afterGradText}
+    </h1>
+    <p>{content}</p>
+    <div class="hero-button">
+      <a class="btnCalendar" href={buttonLink}>{buttonText}</a>
+    </div>
+  </div>
+</section>
